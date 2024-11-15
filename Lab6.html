@@ -3237,7 +3237,10 @@ vertical-align: -.125em;
 <span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> hitters.drop(columns<span class="op">=</span>[<span class="st">&#39;Salary&#39;</span>])</span>
 <span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> hitters[<span class="st">&#39;Salary&#39;</span>]</span>
 <span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> X[y.notna()]</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y[y.notna()]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> y[y.notna()]</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="co"># Reference used: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Reference used: https://stackoverflow.com/questions/21443865/scikit-learn-cross-validation-negative-values-with-mean-squared-error), </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ol start="2" type="1">
@@ -3709,7 +3712,9 @@ Most important categorical variable: dummify__Division_E</code></pre>
 <span id="cb14-84"><a href="#cb14-84" aria-hidden="true" tabindex="-1"></a><span class="co"># results</span></span>
 <span id="cb14-85"><a href="#cb14-85" aria-hidden="true" tabindex="-1"></a>results_df <span class="op">=</span> pd.DataFrame(results)</span>
 <span id="cb14-86"><a href="#cb14-86" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">--- Comparison Results ---&quot;</span>)</span>
-<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_df.sort_values(by<span class="op">=</span><span class="st">&quot;MSE&quot;</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb14-87"><a href="#cb14-87" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(results_df.sort_values(by<span class="op">=</span><span class="st">&quot;MSE&quot;</span>))</span>
+<span id="cb14-88"><a href="#cb14-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-89"><a href="#cb14-89" aria-hidden="true" tabindex="-1"></a><span class="co"># Reference used: https://machinelearningmastery.com/feature-selection-machine-learning-python/ </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -3854,8 +3859,10 @@ Model: ElasticNet, MSE: 107698.43
 <h2 class="anchored" data-anchor-id="part-iii.-discussion">Part III. Discussion</h2>
 <section id="a.-ridge" class="level3">
 <h3 class="anchored" data-anchor-id="a.-ridge">A. Ridge</h3>
-<p>#### Compare your Ridge models with your ordinary regression models. How did your coefficients compare? Why does this make sense?</p>
+<section id="compare-your-ridge-models-with-your-ordinary-regression-models.-how-did-your-coefficients-compare-why-does-this-make-sense" class="level4">
+<h4 class="anchored" data-anchor-id="compare-your-ridge-models-with-your-ordinary-regression-models.-how-did-your-coefficients-compare-why-does-this-make-sense">Compare your Ridge models with your ordinary regression models. How did your coefficients compare? Why does this make sense?</h4>
 <p>The coefficients in the ridge model are smaller in size compared to the oridinary regression model. This makes sense because ridge regressioni applies regularization which penalizes large coefficients and helps to prevent the model from overfitting. This results in the model performing better on unseen data.</p>
+</section>
 </section>
 <section id="b.-lasso" class="level3">
 <h3 class="anchored" data-anchor-id="b.-lasso">B. Lasso</h3>
@@ -3957,6 +3964,9 @@ Mean Squared Error on full dataset: 80204.62</code></pre>
 </section>
 <section id="appendix-and-references" class="level2">
 <h2 class="anchored" data-anchor-id="appendix-and-references">Appendix and References</h2>
+<p>https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.ElasticNet.html</p>
+<p>https://stackoverflow.com/questions/21443865/scikit-learn-cross-validation-negative-values-with-mean-squared-error),</p>
+<p>https://machinelearningmastery.com/feature-selection-machine-learning-python/</p>
 <p>Generative A.I. Statement: Chat-GPT was used to suggest changes in code to debug errors. An example of errors include, incorrect syntax, incorrect usage of parameters for plots, making suggestions to fix parameters to resolve the error in code. Chat-GPT was only used to resolve errors in already hand written code.</p>
 </section>
 </section>
